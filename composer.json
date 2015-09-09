@@ -1,0 +1,23 @@
+{
+    "name": "ganbarodigital/php-event-stream",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        { "name": "Stuart Herbert", "email": "stuart@stuartherbert.com" }
+    ],
+    "require": {
+        "php": ">= 5.5",
+        "ganbarodigital/php-reflection": "^2.8",
+        "ganbarodigital/php-exceptions": "^1.1",
+        "ganbarodigital/php-defensive": "^1.0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.6",
+        "ganbarodigital/php-unit-test-helpers": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "GanbaroDigital\\EventStream\\": "src"
+        }
+    }
+}
