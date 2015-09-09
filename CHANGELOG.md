@@ -2,4 +2,8 @@
 
 ## develop branch
 
-Nothing yet.
+### New
+
+* Exceptions\Exxx_EventStreamException
+* Exceptions\E4xx_EventStreamException
+* Exceptions\E4xx_UnsupportedType
