@@ -11,4 +11,5 @@
 * Exceptions\E4xx_EventStreamException
 * Exceptions\E4xx_NotAnEvent
 * Exceptions\E4xx_UnsupportedType
+* Requirements\RequireEventName
 * Streams\EventStream
