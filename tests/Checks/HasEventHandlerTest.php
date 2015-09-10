@@ -104,29 +104,6 @@ class HasEventHandlerTest extends PHPUnit_Framework_TestCase
         $this->assertFalse($actualResult);
     }
 
-    /**
-     * @covers ::check
-     * @dataProvider provideInvalidClassNames
-     * @expectedException GanbaroDigital\Reflection\Exceptions\E4xx_NoSuchClass
-     */
-    public function testThrowsExceptionWhenClassNameDoesNotExist($eventName)
-    {
-        // ----------------------------------------------------------------
-        // setup your test
-
-        $stream = new EventStream;
-
-        // ----------------------------------------------------------------
-        // perform the change
-
-        $actualResult = HasEventHandler::check($stream, $eventName);
-
-        // ----------------------------------------------------------------
-        // test the results
-
-        $this->assertFalse($actualResult);
-    }
-
     public function provideInvalidEventNames()
     {
         return [
@@ -138,12 +115,6 @@ class HasEventHandlerTest extends PHPUnit_Framework_TestCase
             [ 0, false ],
             [ 100, false ],
             [ new stdClass, false ],
-        ];
-    }
-
-    public function provideInvalidClassNames()
-    {
-        return [
             [ "hello, world!", false ],
         ];
     }
