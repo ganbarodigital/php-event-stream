@@ -1,7 +1,6 @@
 <?php
 
 /**
- * Copyright (c) 2011-present MediaSift Ltd
  * Copyright (c) 2015-present Ganbaro Digital Ltd
  * All rights reserved.
  *
