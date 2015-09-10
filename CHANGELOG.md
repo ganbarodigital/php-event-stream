@@ -2,6 +2,10 @@
 
 ## develop branch
 
+Nothing yet.
+
+## 1.0.0 - Thu Sep 10 2015
+
 ### New
 
 * Checks\HasEventHandler
