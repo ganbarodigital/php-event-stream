@@ -4,6 +4,7 @@
 
 ### New
 
+* Checks\HasEventHandler
 * Events\Event
 * Exceptions\Exxx_EventStreamException
 * Exceptions\E4xx_EventStreamException
