@@ -47,28 +47,28 @@ use GanbaroDigital\EventStream\Events\Event;
 
 class DispatchEvent
 {
-	/**
-	 * send an event to an event stream
-	 *
-	 * any registered handlers will be executed
-	 *
-	 * @param  EventStream $stream
-	 * 		   the stream to send the event to
-	 * @param  Event $event
-	 * 		   the event to dispatch
-	 * @return void
-	 */
-	public static function to(EventStream $stream, Event $event)
-	{
-		// do the fastest thing possible here
-		$eventName = get_class($event);
-		if (!isset($stream->{$eventName})) {
-			return;
-		}
+    /**
+     * send an event to an event stream
+     *
+     * any registered handlers will be executed
+     *
+     * @param  EventStream $stream
+     *         the stream to send the event to
+     * @param  Event $event
+     *         the event to dispatch
+     * @return void
+     */
+    public static function to(EventStream $stream, Event $event)
+    {
+        // do the fastest thing possible here
+        $eventName = get_class($event);
+        if (!isset($stream->{$eventName})) {
+            return;
+        }
 
-		// dispatch the event
-		foreach ($stream->{$eventName} as $eventHandler) {
-			$eventHandler($event);
-		}
-	}
+        // dispatch the event
+        foreach ($stream->{$eventName} as $eventHandler) {
+            $eventHandler($event);
+        }
+    }
 }

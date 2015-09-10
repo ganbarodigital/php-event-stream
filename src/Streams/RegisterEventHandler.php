@@ -49,26 +49,26 @@ use GanbaroDigital\Reflection\Requirements\RequireCallable;
 
 class RegisterEventHandler
 {
-	/**
-	 * We want $eventHandler to be called whenever an event of type $eventName
-	 * is dispatch to the event stream $stream
-	 *
-	 * @param  EventStream $stream
-	 * 		   the stream we want to register the event handler on
-	 * @param  string $eventName
-	 * 		   the event we want to handle
-	 * @param  callable $eventHandler
-	 * 		   the handler we want called
-	 * @return void
-	 */
-	public static function on(EventStream $stream, $eventName, $eventHandler)
-	{
-		RequireEventName::check($eventName);
-		RequireCallable::check($eventHandler, E4xx_UnsupportedType::class);
+    /**
+     * We want $eventHandler to be called whenever an event of type $eventName
+     * is dispatch to the event stream $stream
+     *
+     * @param  EventStream $stream
+     *         the stream we want to register the event handler on
+     * @param  string $eventName
+     *         the event we want to handle
+     * @param  callable $eventHandler
+     *         the handler we want called
+     * @return void
+     */
+    public static function on(EventStream $stream, $eventName, $eventHandler)
+    {
+        RequireEventName::check($eventName);
+        RequireCallable::check($eventHandler, E4xx_UnsupportedType::class);
 
-		if (!isset($stream->{$eventName})) {
-			$stream->{$eventName} = [];
-		}
-		$stream->{$eventName}[] = $eventHandler;
-	}
+        if (!isset($stream->{$eventName})) {
+            $stream->{$eventName} = [];
+        }
+        $stream->{$eventName}[] = $eventHandler;
+    }
 }

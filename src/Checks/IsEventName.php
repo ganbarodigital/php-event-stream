@@ -49,36 +49,36 @@ use GanbaroDigital\Reflection\Checks\IsDefinedClass;
 
 class IsEventName
 {
-	/**
-	 * is $eventName the name of an Event class?
-	 *
-	 * @param  mixed $eventName
-	 * 		   the data to check
-	 * @return boolean
-	 * 		   TRUE if $eventName is the name of an Event class
-	 * 		   FALSE otherwise
-	 */
-	public function __invoke($eventName)
-	{
-		return self::check($eventName);
-	}
+    /**
+     * is $eventName the name of an Event class?
+     *
+     * @param  mixed $eventName
+     *         the data to check
+     * @return boolean
+     *         TRUE if $eventName is the name of an Event class
+     *         FALSE otherwise
+     */
+    public function __invoke($eventName)
+    {
+        return self::check($eventName);
+    }
 
-	/**
-	 * is $eventName the name of an Event class?
-	 *
-	 * @param  mixed $eventName
-	 * 		   the data to check
-	 * @return boolean
-	 * 		   TRUE if $eventName is the name of an Event class
-	 * 		   FALSE otherwise
-	 */
-	public static function check($eventName)
-	{
-		// we only want valid class names, not compatible objects
-		if (!IsDefinedClass::check($eventName)) {
-			return false;
-		}
+    /**
+     * is $eventName the name of an Event class?
+     *
+     * @param  mixed $eventName
+     *         the data to check
+     * @return boolean
+     *         TRUE if $eventName is the name of an Event class
+     *         FALSE otherwise
+     */
+    public static function check($eventName)
+    {
+        // we only want valid class names, not compatible objects
+        if (!IsDefinedClass::check($eventName)) {
+            return false;
+        }
 
-		return IsCompatibleWith::check($eventName, Event::class);
-	}
+        return IsCompatibleWith::check($eventName, Event::class);
+    }
 }

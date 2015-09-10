@@ -48,33 +48,33 @@ use GanbaroDigital\EventStream\Exceptions\E4xx_NotAnEvent;
 
 class RequireEventName
 {
-	/**
-	 * throw exceptions if we do not have the class name of a valid event
-	 *
-	 * @param  mixed $eventName
-	 *         the data to check
-	 * @param  string $exception
-	 * 		   the exception to throw if our requirement is not met
-	 * @return void
-	 */
-	public function __invoke($eventName, $exception = E4xx_NotAnEvent::class)
-	{
-		return self::check($eventName, $exception);
-	}
+    /**
+     * throw exceptions if we do not have the class name of a valid event
+     *
+     * @param  mixed $eventName
+     *         the data to check
+     * @param  string $exception
+     *         the exception to throw if our requirement is not met
+     * @return void
+     */
+    public function __invoke($eventName, $exception = E4xx_NotAnEvent::class)
+    {
+        return self::check($eventName, $exception);
+    }
 
-	/**
-	 * throw exceptions if we do not have the class name of a valid event
-	 *
-	 * @param  mixed $eventName
-	 *         the data to check
-	 * @param  string $exception
-	 * 		   the exception to throw if our requirement is not met
-	 * @return void
-	 */
-	public static function check($eventName, $exception = E4xx_NotAnEvent::class)
-	{
-		if (!IsEventName::check($eventName)) {
-			throw new $exception($eventName);
-		}
-	}
+    /**
+     * throw exceptions if we do not have the class name of a valid event
+     *
+     * @param  mixed $eventName
+     *         the data to check
+     * @param  string $exception
+     *         the exception to throw if our requirement is not met
+     * @return void
+     */
+    public static function check($eventName, $exception = E4xx_NotAnEvent::class)
+    {
+        if (!IsEventName::check($eventName)) {
+            throw new $exception($eventName);
+        }
+    }
 }

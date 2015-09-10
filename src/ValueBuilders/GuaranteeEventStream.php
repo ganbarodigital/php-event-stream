@@ -47,35 +47,35 @@ use GanbaroDigital\EventStream\Streams\EventStream;
 
 class GuaranteeEventStream
 {
-	/**
-	 * make sure has an EventStream to use
-	 *
-	 * @param  mixed $item
-	 * 		   our potential event stream
-	 * @return EventStream
-	 * 		   $item if it is an EventStream
-	 * 		   a new, empty EventStream otherwise
-	 */
-	public function __invoke($item)
-	{
-		return self::from($item);
-	}
+    /**
+     * make sure has an EventStream to use
+     *
+     * @param  mixed $item
+     *         our potential event stream
+     * @return EventStream
+     *         $item if it is an EventStream
+     *         a new, empty EventStream otherwise
+     */
+    public function __invoke($item)
+    {
+        return self::from($item);
+    }
 
-	/**
-	 * make sure has an EventStream to use
-	 *
-	 * @param  mixed $item
-	 * 		   our potential event stream
-	 * @return EventStream
-	 * 		   $item if it is an EventStream
-	 * 		   a new, empty EventStream otherwise
-	 */
-	public static function from($item)
-	{
-		if ($item instanceof EventStream) {
-			return $item;
-		}
+    /**
+     * make sure has an EventStream to use
+     *
+     * @param  mixed $item
+     *         our potential event stream
+     * @return EventStream
+     *         $item if it is an EventStream
+     *         a new, empty EventStream otherwise
+     */
+    public static function from($item)
+    {
+        if ($item instanceof EventStream) {
+            return $item;
+        }
 
-		return new EventStream;
-	}
+        return new EventStream;
+    }
 }

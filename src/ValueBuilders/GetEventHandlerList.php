@@ -48,44 +48,44 @@ use GanbaroDigital\EventStream\Streams\EventStream;
 
 class GetEventHandlerList
 {
-	/**
-	 * return a read-only list of event handlers for a given event from
-	 * a given event stream
-	 *
-	 * @param  EventStream $stream
-	 *         the stream to extract from
-	 * @param  string $eventName
-	 *         the event to get the handler list for
-	 * @return array<callable>
-	 *         the list of handlers for the event
-	 *         can be an empty list
-	 */
-	public function __invoke(EventStream $stream, $eventName)
-	{
-		return self::from($stream, $eventName);
-	}
+    /**
+     * return a read-only list of event handlers for a given event from
+     * a given event stream
+     *
+     * @param  EventStream $stream
+     *         the stream to extract from
+     * @param  string $eventName
+     *         the event to get the handler list for
+     * @return array<callable>
+     *         the list of handlers for the event
+     *         can be an empty list
+     */
+    public function __invoke(EventStream $stream, $eventName)
+    {
+        return self::from($stream, $eventName);
+    }
 
-	/**
-	 * return a read-only list of event handlers for a given event from
-	 * a given event stream
-	 *
-	 * @param  EventStream $stream
-	 *         the stream to extract from
-	 * @param  string $eventName
-	 *         the event to get the handler list for
-	 * @return array<callable>
-	 *         the list of handlers for the event
-	 *         can be an empty list
-	 */
-	public static function from(EventStream $stream, $eventName)
-	{
-		// defensive programming
-		RequireEventName::check($eventName);
+    /**
+     * return a read-only list of event handlers for a given event from
+     * a given event stream
+     *
+     * @param  EventStream $stream
+     *         the stream to extract from
+     * @param  string $eventName
+     *         the event to get the handler list for
+     * @return array<callable>
+     *         the list of handlers for the event
+     *         can be an empty list
+     */
+    public static function from(EventStream $stream, $eventName)
+    {
+        // defensive programming
+        RequireEventName::check($eventName);
 
-		if (!isset($stream->{$eventName})) {
-			return [];
-		}
+        if (!isset($stream->{$eventName})) {
+            return [];
+        }
 
-		return $stream->{$eventName};
-	}
+        return $stream->{$eventName};
+    }
 }

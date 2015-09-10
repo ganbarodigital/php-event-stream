@@ -47,24 +47,24 @@ use GanbaroDigital\EventStream\Streams\EventStream;
 
 class HasEventHandler
 {
-	/**
-	 * are there any handlers registered on a given stream for a given event?
-	 *
-	 * @param EventStream $stream
-	 *        the stream to check
-	 * @param string $eventName
-	 *        the event to check for
-	 * @return boolean
-	 *         TRUE if there are handlers registered for $eventName
-	 *         FALSE otherwise
-	 */
-	public static function check(EventStream $stream, $eventName)
-	{
-		// this avoid PHP runtime errors
-		if (!IsEventName::check($eventName)) {
-			return false;
-		}
+    /**
+     * are there any handlers registered on a given stream for a given event?
+     *
+     * @param EventStream $stream
+     *        the stream to check
+     * @param string $eventName
+     *        the event to check for
+     * @return boolean
+     *         TRUE if there are handlers registered for $eventName
+     *         FALSE otherwise
+     */
+    public static function check(EventStream $stream, $eventName)
+    {
+        // this avoid PHP runtime errors
+        if (!IsEventName::check($eventName)) {
+            return false;
+        }
 
-		return isset($stream->{$eventName});
-	}
+        return isset($stream->{$eventName});
+    }
 }
