@@ -12,6 +12,7 @@
 * Exceptions\E4xx_NotAnEvent
 * Exceptions\E4xx_UnsupportedType
 * Requirements\RequireEventName
+* Streams\DispatchEvent
 * Streams\EventStream
 * Streams\RegisterEventHandler
 * ValueBuilders\GetEventHandlerList
