@@ -14,3 +14,4 @@
 * Requirements\RequireEventName
 * Streams\EventStream
 * ValueBuilders\GetEventHandlerList
+* ValueBuilders\GuaranteeEventStream
