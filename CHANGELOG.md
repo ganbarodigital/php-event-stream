@@ -13,5 +13,6 @@
 * Exceptions\E4xx_UnsupportedType
 * Requirements\RequireEventName
 * Streams\EventStream
+* Streams\RegisterEventHandler
 * ValueBuilders\GetEventHandlerList
 * ValueBuilders\GuaranteeEventStream
