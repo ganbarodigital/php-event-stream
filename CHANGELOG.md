@@ -2,7 +2,10 @@
 
 ## develop branch
 
-Nothing yet.
+### New
+
+* `Streams\EventStream` is now a `DataBag`.
+  * Allows us to take advantage of DataBag-related utils in the future.
 
 ## 1.0.0 - Thu Sep 10 2015
 
