@@ -43,6 +43,8 @@
 
 namespace GanbaroDigital\EventStream\Streams;
 
-class EventStream
+use GanbaroDigital\DataContainers\Containers\DataBag;
+
+class EventStream extends DataBag
 {
 }
